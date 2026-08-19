@@ -18,7 +18,11 @@ export function Footer() {
   const contact = useContactInfo();
 
   const footerLinks = {
-    product: [{ name: "Features", href: "#features" }],
+    product: [
+      { name: "Features", href: "/#features" },
+      { name: "Dashboard", href: "/dashboard" },
+      { name: "Mobile App", href: "/mobile" },
+    ],
     company: [
       { name: "About Us", href: "/about" },
       { name: "Contact", href: "/contact" },

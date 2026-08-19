@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Play, CheckCircle, Truck, Clock, MapPin, Users } from "lucide-react";
+import { CheckCircle, Truck, Clock, MapPin, Users } from "lucide-react";
 import heroImage from "@/assets/hero-highway.jpg";
+import { buttonVariants } from "@/components/ui/button";
+import { StoreDownloadButtons } from "@/components/store-download-buttons";
 import { cn } from "@/lib/utils";
-
-const APP_URL = "https://app.1drivetms.com/";
 
 export function HeroSection() {
   const features = [
@@ -93,29 +92,23 @@ export function HeroSection() {
               ))}
             </motion.div>
 
-            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col gap-4"
             >
               <a
-                href={APP_URL}
+                href="/#features"
                 className={cn(
-                  buttonVariants({ variant: "hero", size: "hero" }),
-                  "group",
+                  buttonVariants({ variant: "cta", size: "hero" }),
+                  "w-fit",
                 )}
               >
                 Get Started
-                <motion.div
-                  className="ml-2"
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  →
-                </motion.div>
+                <span aria-hidden>→</span>
               </a>
+              <StoreDownloadButtons />
             </motion.div>
 
             {/* Stats */}

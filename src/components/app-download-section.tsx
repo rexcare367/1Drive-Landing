@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { Smartphone, Apple, Play } from "lucide-react";
-
-const APP_STORE_URL = "https://apps.apple.com/";
-const PLAY_STORE_URL = "https://play.google.com/store";
+import { Smartphone } from "lucide-react";
+import { StoreDownloadButtons } from "@/components/store-download-buttons";
 
 export function AppDownloadSection() {
   return (
@@ -33,36 +31,7 @@ export function AppDownloadSection() {
               wherever the road takes you. Available on iOS and Android.
             </p>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-xl bg-foreground px-5 py-3.5 text-background transition hover:opacity-90"
-              >
-                <Apple className="h-7 w-7" />
-                <div className="text-left leading-tight">
-                  <p className="text-[10px] uppercase tracking-wide opacity-80">
-                    Download on the
-                  </p>
-                  <p className="text-base font-semibold">App Store</p>
-                </div>
-              </a>
-              <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-3.5 transition hover:bg-muted/50"
-              >
-                <Play className="h-7 w-7 fill-accent text-accent" />
-                <div className="text-left leading-tight">
-                  <p className="text-[10px] uppercase tracking-wide text-muted-foreground">
-                    Get it on
-                  </p>
-                  <p className="text-base font-semibold">Google Play</p>
-                </div>
-              </a>
-            </div>
+            <StoreDownloadButtons />
           </motion.div>
 
           <motion.div

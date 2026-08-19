@@ -41,8 +41,8 @@ export function Header() {
 
   const navigationItems = [
     { name: "Features", href: "#features" },
-    { name: "Drivers", href: "#drivers" },
-    { name: "Download", href: "#download" },
+    { name: "Dashboard", href: "/dashboard" },
+    { name: "Mobile", href: "/mobile" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
