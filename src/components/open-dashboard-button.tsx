@@ -1,6 +1,6 @@
 import { LayoutDashboard } from "lucide-react";
-import { Link } from "react-router-dom";
 import { buttonVariants } from "@/components/ui/button";
+import { APP_URL } from "@/lib/site-images";
 import { cn } from "@/lib/utils";
 
 type OpenDashboardButtonProps = {
@@ -17,8 +17,8 @@ export function OpenDashboardButton({
   onClick,
 }: OpenDashboardButtonProps) {
   return (
-    <Link
-      to="/dashboard"
+    <a
+      href={APP_URL}
       className={cn(
         buttonVariants({ variant: "dashboard", size }),
         "rounded-full",
@@ -29,6 +29,6 @@ export function OpenDashboardButton({
     >
       Open Dashboard
       <LayoutDashboard />
-    </Link>
+    </a>
   );
 }

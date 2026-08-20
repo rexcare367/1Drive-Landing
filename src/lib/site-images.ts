@@ -138,5 +138,4 @@ export const siteImages = {
   ] satisfies SiteImage[],
 } as const;
 
-// export const APP_URL = "https://app.1drivetms.com/";
-export const APP_URL = "http://localhost:4000/";
+export const APP_URL = "https://app.1drivetms.com/";
