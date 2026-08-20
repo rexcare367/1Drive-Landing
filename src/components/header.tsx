@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { APP_URL } from "@/lib/site-images";
+import { OpenDashboardButton } from "@/components/open-dashboard-button";
 
 function scrollToSection(id: string) {
   document
@@ -110,17 +110,10 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "hero", size: "sm" }),
-                "hidden sm:inline-flex rounded-full px-5",
-              )}
-            >
-              Launch App
-            </a>
+            <OpenDashboardButton
+              className="hidden sm:inline-flex px-5"
+              size="sm"
+            />
 
             <Button
               variant="ghost"
@@ -176,18 +169,12 @@ export function Header() {
                     </Link>
                   );
                 })}
-                <a
-                  href={APP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    buttonVariants({ variant: "hero" }),
-                    "w-full mt-2 rounded-full",
-                  )}
+                <OpenDashboardButton
+                  className="mt-2"
+                  fullWidth
+                  size="default"
                   onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Launch App
-                </a>
+                />
               </nav>
             </motion.div>
           )}

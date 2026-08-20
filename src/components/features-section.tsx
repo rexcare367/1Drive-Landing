@@ -12,6 +12,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { dashboardProduct, mobileProduct, type Product } from "@/lib/products";
 import { TechPillsFlat } from "@/components/tech-pills";
+import { OpenDashboardButton } from "@/components/open-dashboard-button";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -74,16 +75,20 @@ function ProductBlock({
           <TechPillsFlat groups={product.tech} tone={product.tone} />
         </div>
 
-        <Link
-          to={product.path}
-          className={cn(
-            buttonVariants({ variant: "hero", size: "lg" }),
-            "shrink-0 rounded-full",
-          )}
-        >
-          Explore {product.eyebrow}
-          <ArrowRight className="h-4 w-4" />
-        </Link>
+        {product.id === "dashboard" ? (
+          <OpenDashboardButton size="lg" className="shrink-0" />
+        ) : (
+          <Link
+            to={product.path}
+            className={cn(
+              buttonVariants({ variant: "hero", size: "lg" }),
+              "shrink-0 rounded-full",
+            )}
+          >
+            Explore {product.eyebrow}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        )}
       </div>
 
       <motion.div

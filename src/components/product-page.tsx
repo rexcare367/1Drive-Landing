@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { Product } from "@/lib/products";
-import { APP_URL } from "@/lib/site-images";
 import { StoreDownloadButtons } from "@/components/store-download-buttons";
+import { OpenDashboardButton } from "@/components/open-dashboard-button";
 
 export function ProductPage({
   product,
@@ -71,19 +71,8 @@ export function ProductPage({
               {product.audience}
             </p>
             <div className="flex flex-col items-start gap-3 sm:flex-row">
-              {product.primaryCta.external ? (
-                <a
-                  href={product.primaryCta.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    buttonVariants({ variant: "hero", size: "lg" }),
-                    "rounded-full",
-                  )}
-                >
-                  {product.primaryCta.label}
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
+              {product.id === "dashboard" ? (
+                <OpenDashboardButton size="lg" />
               ) : (
                 <Link
                   to={product.primaryCta.href}
@@ -179,13 +168,20 @@ export function ProductPage({
       {product.id === "mobile" && (
         <section className="pb-8">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-2xl border border-border/50 bg-muted/20 p-8 sm:p-10">
-              <h2 className="mb-2 text-2xl font-bold">Get the driver app</h2>
-              <p className="mb-6 max-w-xl text-muted-foreground">
-                Available on iOS and Android. Clock in, run trips, and stay in
-                sync with dispatch.
-              </p>
-              <StoreDownloadButtons />
+            <div className="grid items-center gap-8 rounded-2xl border border-border/50 bg-muted/20 p-8 sm:p-10 lg:grid-cols-2">
+              <div>
+                <h2 className="mb-2 text-2xl font-bold">Get the driver app</h2>
+                <p className="mb-6 max-w-xl text-muted-foreground">
+                  Available on iOS and Android. Clock in, run trips, and stay in
+                  sync with dispatch.
+                </p>
+                <StoreDownloadButtons />
+              </div>
+              <img
+                src="/driver-app-download.png"
+                alt="1Drive driver app on a smartphone, with a highway truck in the background"
+                className="w-full max-w-sm justify-self-center rounded-2xl border border-border/40 shadow-elegant object-cover"
+              />
             </div>
           </div>
         </section>
@@ -217,18 +213,7 @@ export function ProductPage({
             </ul>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               {product.id === "dashboard" ? (
-                <a
-                  href={APP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    buttonVariants({ variant: "hero", size: "lg" }),
-                    "rounded-full",
-                  )}
-                >
-                  Launch Dashboard
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
+                <OpenDashboardButton size="lg" />
               ) : (
                 <Link
                   to="/#download"

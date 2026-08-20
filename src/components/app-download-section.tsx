@@ -42,31 +42,11 @@ export function AppDownloadSection() {
             className="relative flex justify-center"
           >
             <div className="absolute -inset-8 rounded-full bg-accent/10 blur-3xl" />
-            <div className="relative w-[240px] rounded-[2.2rem] border-[7px] border-foreground/85 bg-card p-2 shadow-elegant">
-              <div className="overflow-hidden rounded-[1.6rem] bg-gradient-to-b from-primary to-primary/80 p-5 text-primary-foreground min-h-[420px]">
-                <div className="mb-6 flex items-center justify-between">
-                  <img src="/logo.png" alt="" className="h-8 w-auto brightness-0 invert" />
-                  <span className="text-xs font-medium opacity-80">Driver</span>
-                </div>
-                <h3 className="mb-1 text-xl font-bold">Ready to roll?</h3>
-                <p className="mb-6 text-sm opacity-85">
-                  Your next shift is one tap away.
-                </p>
-                <div className="space-y-3">
-                  {["Clock In", "View Schedule", "Request PTO"].map((label) => (
-                    <div
-                      key={label}
-                      className="rounded-xl bg-background/15 px-4 py-3 text-sm font-medium backdrop-blur-sm"
-                    >
-                      {label}
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8 rounded-xl bg-accent px-4 py-3 text-center text-sm font-semibold text-accent-foreground">
-                  Start Shift
-                </div>
-              </div>
-            </div>
+            <img
+              src="/driver-app-download.png"
+              alt="1Drive driver app on a smartphone, with a highway truck in the background"
+              className="relative w-full max-w-md rounded-3xl border border-border/40 shadow-elegant object-cover"
+            />
           </motion.div>
         </div>
       </div>

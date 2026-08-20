@@ -50,14 +50,6 @@ export const siteImages = {
 
   featuresMobile: [
     {
-      src: "https://images.unsplash.com/photo-1544620341-1adc1b6f1b0d?auto=format&fit=crop&w=800&q=80",
-      alt: "Driver on scheduled transit route",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1591768793355-41c21d0a0f5c?auto=format&fit=crop&w=800&q=80",
-      alt: "Driver inspecting truck before departure",
-    },
-    {
       src: "https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=800&q=80",
       alt: "Transit driver ready for the road",
     },

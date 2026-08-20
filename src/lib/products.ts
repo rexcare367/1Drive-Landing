@@ -27,7 +27,7 @@ import {
   Video,
   Wallet,
 } from "lucide-react";
-import { APP_URL, siteImages, type SiteImage } from "@/lib/site-images";
+import { siteImages, type SiteImage } from "@/lib/site-images";
 
 export type TechItem = {
   name: string;
@@ -79,7 +79,7 @@ export const dashboardProduct: Product = {
   audience: "Built for managers, dispatch, and payroll",
   tone: "primary",
   heroImages: siteImages.featuresWeb,
-  primaryCta: { label: "Launch Dashboard", href: APP_URL, external: true },
+  primaryCta: { label: "Open Dashboard", href: "/dashboard" },
   highlights: [
     {
       icon: MapPin,

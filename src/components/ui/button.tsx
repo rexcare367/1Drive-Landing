@@ -19,7 +19,9 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "hero-gradient text-primary-foreground hover:scale-105 glow-effect hover:shadow-xl border-0 font-semibold",
-        cta: "cta-gradient text-primary-foreground font-semibold",
+        cta: "bg-primary text-primary-foreground font-semibold border border-white/10 shadow-[0_8px_22px_-12px_hsl(var(--primary)/0.7)] hover:bg-[hsl(221,83%,47%)] hover:shadow-[0_10px_26px_-12px_hsl(var(--primary)/0.8)] hover:border-white/20",
+        dashboard:
+          "rounded-full bg-primary text-primary-foreground font-semibold tracking-wide border border-white/10 shadow-[0_1px_0_0_hsl(0_0%_100%/0.14)_inset,0_8px_18px_-10px_hsl(var(--primary)/0.65)] hover:bg-[hsl(221,83%,47%)] hover:shadow-[0_1px_0_0_hsl(0_0%_100%/0.18)_inset,0_10px_22px_-10px_hsl(var(--primary)/0.75)] active:bg-[hsl(221,83%,44%)]",
         glass: "glass-header text-foreground hover:bg-background/90 border border-border/50",
         download: "bg-accent text-accent-foreground hover:bg-accent/90 animate-pulse-glow font-semibold",
       },

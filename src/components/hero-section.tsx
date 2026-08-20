@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { CheckCircle, Truck, Clock, MapPin, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, Truck, Clock, MapPin, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-highway.jpg";
 import { buttonVariants } from "@/components/ui/button";
 import { StoreDownloadButtons } from "@/components/store-download-buttons";
@@ -98,16 +99,16 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="flex flex-col gap-4"
             >
-              <a
-                href="/#features"
+              <Link
+                to="/mobile"
                 className={cn(
                   buttonVariants({ variant: "cta", size: "hero" }),
-                  "w-fit",
+                  "w-fit rounded-full",
                 )}
               >
                 Get Started
-                <span aria-hidden>→</span>
-              </a>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
               <StoreDownloadButtons />
             </motion.div>
 

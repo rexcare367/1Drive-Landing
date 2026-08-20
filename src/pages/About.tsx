@@ -12,7 +12,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ImageCarousel } from "@/components/image-carousel";
-import { APP_URL, siteImages } from "@/lib/site-images";
+import { siteImages } from "@/lib/site-images";
+import { OpenDashboardButton } from "@/components/open-dashboard-button";
 import {
   Target,
   Eye,
@@ -169,24 +170,14 @@ export default function About() {
               Talk with our team or jump straight into the platform.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <OpenDashboardButton size="lg" />
               <Link
                 to="/contact"
-                className={cn(buttonVariants({ variant: "hero", size: "lg" }), "rounded-full")}
+                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-full")}
               >
                 Contact Us
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <a
-                href={APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "rounded-full",
-                )}
-              >
-                Launch App
-              </a>
             </div>
           </div>
         </div>

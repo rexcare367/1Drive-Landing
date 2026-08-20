@@ -1,18 +1,11 @@
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import {
   Mail,
-  Phone,
   MapPin,
-  Twitter,
-  Facebook,
-  Linkedin,
-  Github,
-  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useContactInfo } from "@/hooks/use-contact-info";
 import { formatAddress } from "@/lib/contact";
+import { OpenDashboardButton } from "@/components/open-dashboard-button";
 
 export function Footer() {
   const contact = useContactInfo();
@@ -30,13 +23,6 @@ export function Footer() {
     legal: [{ name: "Privacy Policy", href: "/privacy-policy" }],
   };
 
-  const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "GitHub" },
-  ];
-
   return (
     <footer className="relative bg-background border-t border-border/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -51,6 +37,7 @@ export function Footer() {
               The complete driver management solution for modern fleets.
               Streamline operations, enhance safety, and improve efficiency.
             </p>
+            <OpenDashboardButton size="default" className="mb-6" />
 
             {contact && (
               <div className="space-y-2 mb-6">
